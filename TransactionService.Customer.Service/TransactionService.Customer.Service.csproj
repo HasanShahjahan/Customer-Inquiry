@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICustomerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TransactionService.Customer.Data\TransactionService.Customer.Data.csproj">
