@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TransactionService.Customer.Data.EntityDataModel
+namespace TransactionService.Customer.Data
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace TransactionService.Customer.Data.EntityDataModel
     {
         public long id { get; set; }
         public long customer_id { get; set; }
-        public string customer_ame { get; set; }
+        public string customer_name { get; set; }
         public string contact_email { get; set; }
         public long mobile_no { get; set; }
         public long transaction_id { get; set; }

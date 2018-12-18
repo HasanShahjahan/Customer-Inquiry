@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TransactionService.Customer.Data.EntityDataModel
+namespace TransactionService.Customer.Data
 {
     using System;
     using System.Collections.Generic;
@@ -19,9 +19,5 @@ namespace TransactionService.Customer.Data.EntityDataModel
         public decimal amount { get; set; }
         public string currency_code { get; set; }
         public string status { get; set; }
-        public string created_by { get; set; }
-        public System.DateTime created_date { get; set; }
-        public string updated_by { get; set; }
-        public System.DateTime updated_date { get; set; }
     }
 }

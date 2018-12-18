@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TransactionService.Customer.Data.EntityDataModel;
+using TransactionService.Customer.Data;
 
 
 namespace TransactionService.Customer.Service.Services
@@ -14,22 +14,22 @@ namespace TransactionService.Customer.Service.Services
         #endregion
 
         #region Service Implementation
-        public Data.EntityDataModel.Customer GetCustomer(string email)
+        public TransactionService.Customer.Data.Customer GetCustomer(string email)
         {
             throw new NotImplementedException();
         }
 
-        public Data.EntityDataModel.Customer GetCustomer(int customerId)
+        public TransactionService.Customer.Data.Customer GetCustomer(int customerId)
         {
             throw new NotImplementedException();
         }
 
-        public Data.EntityDataModel.Customer GetCustomer(int customerId, string email)
+        public TransactionService.Customer.Data.Customer GetCustomer(int customerId, string email)
         {
             throw new NotImplementedException();
         }
 
-        public List<Data.EntityDataModel.Customer> GetCustomers()
+        public List<TransactionService.Customer.Data.Customer> GetCustomers()
         {
             return db.Customers.ToList();
         }

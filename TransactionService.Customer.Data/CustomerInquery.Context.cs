@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TransactionService.Customer.Data.EntityDataModel
+namespace TransactionService.Customer.Data
 {
     using System;
     using System.Data.Entity;

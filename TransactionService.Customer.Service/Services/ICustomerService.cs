@@ -9,9 +9,9 @@ namespace TransactionService.Customer.Service.Services
 {
     public interface ICustomerService
     {
-        List<TransactionService.Customer.Data.EntityDataModel.Customer> GetCustomers();
-        TransactionService.Customer.Data.EntityDataModel.Customer GetCustomer(int customerId);
-        TransactionService.Customer.Data.EntityDataModel.Customer GetCustomer(string email);
-        TransactionService.Customer.Data.EntityDataModel.Customer GetCustomer(int customerId,string email);
+        List<TransactionService.Customer.Data.Customer> GetCustomers();
+        TransactionService.Customer.Data.Customer GetCustomer(int customerId);
+        TransactionService.Customer.Data.Customer GetCustomer(string email);
+        TransactionService.Customer.Data.Customer GetCustomer(int customerId,string email);
     }
 }

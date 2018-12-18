@@ -109,11 +109,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="EntityDataModel\CustomerInquery.edmx">
+    <EntityDeploy Include="CustomerInquery.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CustomerInquery.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="EntityDataModel\CustomerInquery.edmx.diagram">
+    <Content Include="CustomerInquery.edmx.diagram">
       <DependentUpon>CustomerInquery.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
@@ -124,12 +124,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityDataModel\CustomerInquery.Context.tt">
+    <Content Include="CustomerInquery.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomerInquery.edmx</DependentUpon>
       <LastGenOutput>CustomerInquery.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EntityDataModel\CustomerInquery.tt">
+    <Content Include="CustomerInquery.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomerInquery.edmx</DependentUpon>
       <LastGenOutput>CustomerInquery.cs</LastGenOutput>
@@ -137,28 +137,28 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityDataModel\Customer.cs">
+    <Compile Include="Customer.cs">
       <DependentUpon>CustomerInquery.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityDataModel\CustomerInquery.Context.cs">
+    <Compile Include="CustomerInquery.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerInquery.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityDataModel\CustomerInquery.cs">
+    <Compile Include="CustomerInquery.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerInquery.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityDataModel\CustomerInquery.Designer.cs">
+    <Compile Include="CustomerInquery.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerInquery.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntityDataModel\Transaction.cs">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction.cs">
       <DependentUpon>CustomerInquery.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
