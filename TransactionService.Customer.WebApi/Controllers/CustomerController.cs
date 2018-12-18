@@ -8,6 +8,7 @@ using TransactionService.Customer.Service.Services;
 
 namespace TransactionService.Customer.WebApi.Controllers
 {
+    [RoutePrefix("api/customers")]
     public class CustomerController : ApiController
     {
         #region Global Members
@@ -15,33 +16,31 @@ namespace TransactionService.Customer.WebApi.Controllers
         #endregion
 
         #region Public Methods
-        public List<TransactionService.Customer.Data.Customer> Get()
+        [Route("{customerId:long}")]
+        public HttpResponseMessage Get(long customerId)
         {
-            List<TransactionService.Customer.Data.Customer> customers = null;
-            try
-            {
-                customers = _customerService.GetCustomers();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            
-            return customers;
+            var customer = _customerService.GetCustomer(customerId);
+            if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
         }
-        public TransactionService.Customer.Data.Customer Get(int customerId)
+        [Route("{email}")]
+        public HttpResponseMessage Get(string email)
         {
-            TransactionService.Customer.Data.Customer customer;
-            try
-            {
-                customer = _customerService.GetCustomer(customerId);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return customer;
+            var customer = _customerService.GetCustomer(email);
+            if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
         }
+        [Route("{customerId}/{email}")]
+        public HttpResponseMessage Get(long customerId, string email)
+        {
+            var customer = _customerService.GetCustomer(customerId, email);
+            if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
+        }
+        #endregion
+
+        #region Private Methods
+
         #endregion
     }
 }

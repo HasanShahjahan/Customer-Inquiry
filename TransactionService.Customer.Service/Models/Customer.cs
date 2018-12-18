@@ -5,9 +5,10 @@ using System.Web;
 
 namespace TransactionService.Customer.Service.Models
 {
-    public class Customer
+    
+    public class Customer 
     {
-        public int customerID { get; set; }
+        public long customerID { get; set; }
         public string name { get; set; }
         public string email { get; set; }
         public List<Transaction> transactions { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TransactionService.Customer.Data;
-
+using TransactionService.Customer.Service.Models;
 
 namespace TransactionService.Customer.Service.Services
 {
@@ -11,27 +11,55 @@ namespace TransactionService.Customer.Service.Services
     {
         #region DbContext
         private TransactionServiceEntities db = new TransactionServiceEntities();
+
+
         #endregion
 
         #region Service Implementation
-        public TransactionService.Customer.Data.Customer GetCustomer(string email)
+        public Models.Customer GetCustomer(string email)
         {
-            throw new NotImplementedException();
-        }
+            var data = (from customer in db.Customers
+                        join transaction in db.Transactions on customer.transaction_id equals transaction.transaction_id into transactionInformation
+                        from transaction in transactionInformation.DefaultIfEmpty()
+                        where customer.contact_email == email
+                        select new Models.Customer
+                        {
+                            customerID = customer.customer_id,
+                            name = customer.customer_name,
+                            email = customer.contact_email
+                        }).FirstOrDefault();
 
-        public TransactionService.Customer.Data.Customer GetCustomer(int customerId)
-        {
-            throw new NotImplementedException();
+            return data;
         }
-
-        public TransactionService.Customer.Data.Customer GetCustomer(int customerId, string email)
+        public Models.Customer GetCustomer(long customerId)
         {
-            throw new NotImplementedException();
+            var data = (from customer in db.Customers
+                        join transaction in db.Transactions on customer.transaction_id equals transaction.transaction_id into transactionInformation
+                        from transaction in transactionInformation.DefaultIfEmpty()
+                        where customer.customer_id == customerId
+                        select new Models.Customer
+                        {
+                            customerID = customer.customer_id,
+                            name = customer.customer_name,
+                            email = customer.contact_email
+                        }).FirstOrDefault();
+
+            return data;
         }
-
-        public List<TransactionService.Customer.Data.Customer> GetCustomers()
+        public Models.Customer GetCustomer(long customerId, string email)
         {
-            return db.Customers.ToList();
+            var data = (from customer in db.Customers
+                        join transaction in db.Transactions on customer.transaction_id equals transaction.transaction_id into transactionInformation
+                        from transaction in transactionInformation.DefaultIfEmpty()
+                        where customer.customer_id == customerId && customer.contact_email == email
+                        select new Models.Customer
+                        {
+                            customerID = customer.customer_id,
+                            name = customer.customer_name,
+                            email = customer.contact_email
+                        }).FirstOrDefault();
+
+            return data;
         }
         #endregion
     }
