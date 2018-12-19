@@ -11,54 +11,44 @@ namespace TransactionService.Customer.Service.Services
     {
         #region DbContext
         private TransactionServiceEntities db = new TransactionServiceEntities();
-
-
         #endregion
 
         #region Service Implementation
         public Models.Customer GetCustomer(long? customerId, string email)
         {
-            var data = (from customer in db.Customers
-                        join transaction in db.Transactions on customer.customer_id equals transaction.customer_id into transactionInformation
-                        from transaction in transactionInformation.DefaultIfEmpty()
-                        where customer.customer_id == customerId && customer.contact_email == email
-                        select new Models.Customer
-                        {
-                            customerID = customer.customer_id,
-                            name = customer.customer_name,
-                            email = customer.contact_email,
-                            mobile = customer.mobile_no.ToString()
-                            
-                        }).FirstOrDefault();
-
-            if(data !=null) data.transactions = GetTransactionHistory(customerId,email);
+            var data = GetCustomerInformation(customerId, email);
+            if (data != null) data.transactions = GetTransactionHistory(data.customerID);
             return data;
         }
         #endregion
-
-        private List<Models.Transaction> GetTransactionHistory(long? customerId, string email)
+        private Models.Customer GetCustomerInformation(long? customerId, string email)
         {
-            List<Models.Transaction> data = null; 
-            try
+            var query = db.Customers.Select(f => f);
+            if (customerId != null && string.IsNullOrEmpty(email)) query = query.Where(f => f.customer_id == customerId);
+            if (customerId == null && !string.IsNullOrEmpty(email)) query = query.Where(f => f.contact_email == email);
+            if (customerId != null && !string.IsNullOrEmpty(email)) query = query.Where(f => f.customer_id == customerId && f.contact_email == email);
+            var results = query.Select(u => new Models.Customer
             {
-                     data = (from transaction in db.Transactions
-                            join customer in db.Customers on transaction.customer_id equals customer.customer_id into transactionInformation
-                            where transaction.customer_id == customerId
-                            select new Models.Transaction
-                            {
-                                id = transaction.customer_id,
-                                date = transaction.transaction_date,
-                                amount = transaction.amount,
-                                currency = transaction.currency_code,
-                                status = transaction.status
-                            }).ToList();
-            }
-            catch (Exception ex)
+                customerID = u.customer_id,
+                name = u.customer_name,
+                email = u.contact_email,
+                mobile = u.mobile_no.ToString()
+            }).FirstOrDefault();
+            return results;
+        }
+        private List<Models.Transaction> GetTransactionHistory(long? customerId)
+        {
+            var query = db.Transactions.Select(f => f);
+            query = query.Where(f => f.customer_id == customerId);
+            var results = query.Select(u => new Models.Transaction
             {
-                throw ex;
-            }
-            
-            return data;
+                id = u.transaction_id,
+                date = u.transaction_date,
+                amount = u.amount,
+                currency = u.currency_code,
+                status = u.status
+            }).ToList();
+            return results;
         }
     }
 }

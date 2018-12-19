@@ -36,9 +36,5 @@ namespace TransactionService.Customer.WebApi.Controllers
         }
 
         #endregion
-
-        #region Private Methods
-        
-        #endregion
     }
 }
