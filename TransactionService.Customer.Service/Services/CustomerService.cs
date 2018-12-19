@@ -38,17 +38,26 @@ namespace TransactionService.Customer.Service.Services
 
         private List<Models.Transaction> GetTransactionHistory(long? customerId, string email)
         {
-            var data = (from transaction in db.Transactions
-                        join customer in db.Customers on transaction.customer_id equals customer.customer_id into transactionInformation
-                        where transaction.customer_id == customerId
-                        select new Models.Transaction
-                        {
-                            id = transaction.customer_id,
-                            date = transaction.transaction_date,
-                            amount = transaction.amount,
-                            currency = transaction.currency_code,
-                            status = transaction.status
-                        }).ToList();
+            List<Models.Transaction> data = null; 
+            try
+            {
+                     data = (from transaction in db.Transactions
+                            join customer in db.Customers on transaction.customer_id equals customer.customer_id into transactionInformation
+                            where transaction.customer_id == customerId
+                            select new Models.Transaction
+                            {
+                                id = transaction.customer_id,
+                                date = transaction.transaction_date,
+                                amount = transaction.amount,
+                                currency = transaction.currency_code,
+                                status = transaction.status
+                            }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
             return data;
         }
     }
