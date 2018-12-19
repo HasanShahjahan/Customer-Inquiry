@@ -19,5 +19,6 @@ namespace TransactionService.Customer.Data
         public decimal amount { get; set; }
         public string currency_code { get; set; }
         public string status { get; set; }
+        public long customer_id { get; set; }
     }
 }

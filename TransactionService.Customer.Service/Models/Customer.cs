@@ -11,6 +11,7 @@ namespace TransactionService.Customer.Service.Models
         public long customerID { get; set; }
         public string name { get; set; }
         public string email { get; set; }
+        public string mobile { get; set; }
         public List<Transaction> transactions { get; set; }
         public Customer()
         {

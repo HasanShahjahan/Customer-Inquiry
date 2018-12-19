@@ -8,7 +8,7 @@ using TransactionService.Customer.Service.Services;
 
 namespace TransactionService.Customer.WebApi.Controllers
 {
-    [RoutePrefix("api/customers")]
+    [RoutePrefix("api/customer")]
     public class CustomerController : ApiController
     {
         #region Global Members
@@ -16,27 +16,14 @@ namespace TransactionService.Customer.WebApi.Controllers
         #endregion
 
         #region Public Methods
-        [Route("{customerId:long}")]
-        public HttpResponseMessage Get(long customerId)
-        {
-            var customer = _customerService.GetCustomer(customerId);
-            if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
-            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
-        }
-        [Route("{email}")]
-        public HttpResponseMessage Get(string email)
-        {
-            var customer = _customerService.GetCustomer(email);
-            if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
-            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
-        }
-        [Route("{customerId}/{email}")]
-        public HttpResponseMessage Get(long customerId, string email)
+        [Route("Details")]
+        public HttpResponseMessage Get(long? customerId,string email)
         {
             var customer = _customerService.GetCustomer(customerId, email);
             if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
             return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
         }
+        
         #endregion
 
         #region Private Methods

@@ -7,7 +7,7 @@ namespace TransactionService.Customer.Service.Models
 {
     public class Transaction
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public DateTime date { get; set; }
         public decimal amount { get; set; }
         public string currency { get; set; }

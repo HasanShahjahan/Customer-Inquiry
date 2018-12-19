@@ -14,11 +14,9 @@ namespace TransactionService.Customer.Data
     
     public partial class Customer
     {
-        public long id { get; set; }
         public long customer_id { get; set; }
         public string customer_name { get; set; }
         public string contact_email { get; set; }
         public long mobile_no { get; set; }
-        public long transaction_id { get; set; }
     }
 }

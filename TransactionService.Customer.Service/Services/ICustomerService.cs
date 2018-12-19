@@ -9,8 +9,6 @@ namespace TransactionService.Customer.Service.Services
 {
     public interface ICustomerService
     {
-        TransactionService.Customer.Service.Models.Customer GetCustomer(long customerId);
-        TransactionService.Customer.Service.Models.Customer GetCustomer(string email);
-        TransactionService.Customer.Service.Models.Customer GetCustomer(long customerId,string email);
+        TransactionService.Customer.Service.Models.Customer GetCustomer(long? customerId,string email);
     }
 }
