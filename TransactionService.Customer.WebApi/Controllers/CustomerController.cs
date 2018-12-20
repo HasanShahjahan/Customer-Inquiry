@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
-using System.Net.Mail;
-using System.Text.RegularExpressions;
 using System.Web.Http;
 using TransactionService.Customer.Service.Services;
 using TransactionService.Customer.WebApi.ValidationRules;
@@ -35,6 +30,13 @@ namespace TransactionService.Customer.WebApi.Controllers
             }
         }
 
+        #endregion
+
+        #region Disposal
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
         #endregion
     }
 }
