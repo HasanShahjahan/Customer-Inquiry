@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,14 +11,23 @@ namespace TransactionService.Customer.Service.Services
     public class CustomerService : ICustomerService
     {
         #region DbContext
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private TransactionServiceEntities db = new TransactionServiceEntities();
         #endregion
 
         #region Service Implementation
         public Models.Customer GetCustomer(long? customerId, string email)
         {
-            var data = GetCustomerInformation(customerId, email);
-            if (data != null) data.transactions = GetTransactionHistory(data.customerID);
+            Models.Customer data = null;
+            try
+            {
+                data = GetCustomerInformation(customerId, email);
+                if (data != null) data.transactions = GetTransactionHistory(data.customerID);
+            }
+            catch (Exception exception)
+            {
+                logger.Error("Getting data with search query and error is : " + exception);
+            }
             return data;
         }
         #endregion
