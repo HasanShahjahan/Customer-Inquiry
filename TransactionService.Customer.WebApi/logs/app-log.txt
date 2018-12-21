@@ -126,3 +126,143 @@
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    at TransactionService.Customer.Service.Services.CustomerService.GetTransactionHistory(Nullable`1 customerId) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 54
    at TransactionService.Customer.Service.Services.CustomerService.GetCustomer(Nullable`1 customerId, String email) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 26
+2018-12-21 07:17:32.9168|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : user@domain.com
+2018-12-21 07:56:05.4635|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :1000000001 and Email address : hasan.shahjahan@gmail.com
+2018-12-21 07:56:13.4992|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|No Customer Found.
+2018-12-21 07:56:45.9978|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : 
+2018-12-21 07:56:52.3611|ERROR|TransactionService.Customer.Service.Services.CustomerService|Getting data with search query and error is : System.NotSupportedException: LINQ to Entities does not recognize the method 'System.String GetFormattedDate(System.DateTime)' method, and this method cannot be translated into a store expression.
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TransactionService.Customer.Service.Services.CustomerService.GetTransactionHistory(Nullable`1 customerId) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 53
+   at TransactionService.Customer.Service.Services.CustomerService.GetCustomer(Nullable`1 customerId, String email) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 25
+2018-12-21 07:58:08.6057|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : user@domain.com
+2018-12-21 07:58:09.7982|ERROR|TransactionService.Customer.Service.Services.CustomerService|Getting data with search query and error is : System.NotSupportedException: LINQ to Entities does not recognize the method 'System.String GetFormattedDate(System.DateTime)' method, and this method cannot be translated into a store expression.
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TransactionService.Customer.Service.Services.CustomerService.GetTransactionHistory(Nullable`1 customerId) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 53
+   at TransactionService.Customer.Service.Services.CustomerService.GetCustomer(Nullable`1 customerId, String email) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 25
+2018-12-21 08:01:06.2452|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : user@domain.com
+2018-12-21 08:02:09.1344|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123457 and Email address : user1@domain.com
+2018-12-21 08:02:27.4389|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123458 and Email address : user2@domain.com
+2018-12-21 08:04:48.8969|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123458 and Email address : user2@domain.com
+2018-12-21 08:04:53.5068|ERROR|TransactionService.Customer.Service.Services.CustomerService|Getting data with search query and error is : System.NotSupportedException: LINQ to Entities does not recognize the method 'System.String ToString(System.String)' method, and this method cannot be translated into a store expression.
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TransactionService.Customer.Service.Services.CustomerService.GetTransactionHistory(Nullable`1 customerId) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 53
+   at TransactionService.Customer.Service.Services.CustomerService.GetCustomer(Nullable`1 customerId, String email) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 25
+2018-12-21 08:05:19.1473|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : user@domain.com
+2018-12-21 08:05:19.6949|ERROR|TransactionService.Customer.Service.Services.CustomerService|Getting data with search query and error is : System.NotSupportedException: LINQ to Entities does not recognize the method 'System.String ToString(System.String)' method, and this method cannot be translated into a store expression.
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TransactionService.Customer.Service.Services.CustomerService.GetTransactionHistory(Nullable`1 customerId) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 53
+   at TransactionService.Customer.Service.Services.CustomerService.GetCustomer(Nullable`1 customerId, String email) in F:\2C2P\TransactionService\TransactionService.Customer.Service\Services\CustomerService.cs:line 25
+2018-12-21 08:39:15.4688|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : user@domain.com
+2018-12-21 08:40:04.3651|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :123456 and Email address : 
+2018-12-21 08:40:27.1522|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id : and Email address : user@domain.com
+2018-12-21 08:40:57.2300|TRACE|TransactionService.Customer.WebApi.Controllers.CustomerController|No inquiry criteria
+2018-12-21 08:41:09.6498|TRACE|TransactionService.Customer.WebApi.Controllers.CustomerController|Invalid Customer Id
+2018-12-21 08:41:35.3422|TRACE|TransactionService.Customer.WebApi.Controllers.CustomerController|No inquiry criteria
+2018-12-21 08:41:51.6756|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :125487 and Email address : 
+2018-12-21 08:41:52.2162|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|No Customer Found.
+2018-12-21 08:42:04.9607|TRACE|TransactionService.Customer.WebApi.Controllers.CustomerController|No inquiry criteria
+2018-12-21 08:42:30.1489|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :12 and Email address : 
+2018-12-21 08:42:30.3753|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|No Customer Found.
+2018-12-21 08:42:53.6861|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|Inquery with Customer Id :1 and Email address : n@a.vom
+2018-12-21 08:42:54.0362|INFO|TransactionService.Customer.WebApi.Controllers.CustomerController|No Customer Found.
+2018-12-21 08:43:10.5405|TRACE|TransactionService.Customer.WebApi.Controllers.CustomerController|No inquiry criteria

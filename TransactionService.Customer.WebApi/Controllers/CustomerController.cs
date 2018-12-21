@@ -28,7 +28,7 @@ namespace TransactionService.Customer.WebApi.Controllers
                 var customer = _customerService.GetCustomer(customerId, email);
                 if (customer != null) return Request.CreateResponse(HttpStatusCode.OK, customer);
                 logger.Info("No Customer Found.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Customer Found");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not Found");
 
             }
             else

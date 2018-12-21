@@ -1,0 +1,35 @@
+----------------------------------------Insert Customers Table---------------------------------------------------------
+CREATE TABLE Customers (
+    customer_id bigint NOT NULL PRIMARY KEY CHECK(datalength([customer_id])<=(10)),
+	customer_name nvarchar(30) NOT NULL CHECK(len([customer_name])<=(30)),
+	contact_email nvarchar(25) NOT NULL CHECK(len([contact_email])<=(25)),
+	mobile_no bigint NOT NULL);
+
+
+----------------------------------------Insert Customers Table Value---------------------------------------------------
+
+
+INSERT INTO dbo.Customers (customer_id,customer_name,contact_email,mobile_no)
+VALUES (123456,'Firstname Lastname','user@domain.com', 0123456789),
+              (123457,'Firstname1 Lastname1','user1@domain.com', 0123456710),
+              (123458,'Firstname2 Lastname2','user2@domain.com', 0123456711);
+
+----------------------------------------Insert Transactions Table---------------------------------------------------------
+CREATE TABLE Transactions (
+             transaction_id bigint NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	         transaction_date nvarchar(20) NOT NULL,
+	         amount decimal(18, 2) NOT NULL,
+	         currency_code nvarchar(3) NOT NULL,
+	         status nvarchar(10) NOT NULL,
+	         customer_id bigint NOT NULL FOREIGN KEY REFERENCES Customers(customer_id)
+);
+
+----------------------------------------Insert Transactions Table Value---------------------------------------------------
+
+SET IDENTITY_INSERT dbo.Transactions ON
+INSERT INTO dbo.Transactions(transaction_id,transaction_date,amount,currency_code,status,customer_id)
+VALUES (1,'31/02/2018 21:34',1234.56,'USD','Success',123456),
+              (2,'01/11/2018 08:34',0.56,'THB','Failed',123456),
+              (3,'01/12/2018 10:34' ,11.56,'BDT','Canceled',123458);
+SET IDENTITY_INSERT dbo.Transactions OFF
+

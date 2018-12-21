@@ -15,10 +15,12 @@ namespace TransactionService.Customer.Data
     public partial class Transaction
     {
         public long transaction_id { get; set; }
-        public System.DateTime transaction_date { get; set; }
+        public string transaction_date { get; set; }
         public decimal amount { get; set; }
         public string currency_code { get; set; }
         public string status { get; set; }
         public long customer_id { get; set; }
+    
+        public virtual Customer Customer { get; set; }
     }
 }
